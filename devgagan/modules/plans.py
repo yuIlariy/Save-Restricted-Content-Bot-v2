@@ -52,10 +52,10 @@ async def myplan(client, message):
     data = await plans_db.check_premium(user_id)  
     if data and data.get("expire_date"):
         expiry = data.get("expire_date")
-        expiry_ist = expiry.astimezone(pytz.timezone("Asia/Kolkata"))
-        expiry_str_in_ist = expiry.astimezone(pytz.timezone("Asia/Kolkata")).strftime("%d-%m-%Y\n⏱️ ᴇxᴘɪʀʏ ᴛɪᴍᴇ : %I:%M:%S %p")            
+        expiry_ist = expiry.astimezone(pytz.timezone("Africa/Nairobi"))
+        expiry_str_in_ist = expiry.astimezone(pytz.timezone("Africa/Nairobi")).strftime("%d-%m-%Y\n⏱️ ᴇxᴘɪʀʏ ᴛɪᴍᴇ : %I:%M:%S %p")            
         
-        current_time = datetime.datetime.now(pytz.timezone("Asia/Kolkata"))
+        current_time = datetime.datetime.now(pytz.timezone("Africa/Nairobi"))
         time_left = expiry_ist - current_time
             
         
@@ -79,7 +79,7 @@ async def get_premium(client, message):
         data = await plans_db.check_premium(user_id)  
         if data and data.get("expire_date"):
             expiry = data.get("expire_date") 
-            expiry_ist = expiry.astimezone(pytz.timezone("Asia/Kolkata"))
+            expiry_ist = expiry.astimezone(pytz.timezone("Africa/Nairobi"))
             expiry_str_in_ist = expiry.astimezone(pytz.timezone("Africa/Nairobi")).strftime("%d-%m-%Y\n⏱️ ᴇxᴘɪʀʏ ᴛɪᴍᴇ : %I:%M:%S %p")            
             
             current_time = datetime.datetime.now(pytz.timezone("Africa/Nairobi"))
